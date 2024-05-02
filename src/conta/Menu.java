@@ -9,8 +9,8 @@ import conta.util.Cores;
 public class Menu {
 	public static void main(String[] args) {
 
-		// Teste da Classe Conta
-		Conta c1 = new Conta(3, 123, 1, "Mariana", 500000.0f);
+		//Classe Conta
+		Conta c1 = new Conta(3, 123, 1, "Bernadete Campos", 500000.0f);
 		c1.visualizar();
 		c1.sacar(12000.0f);
 		c1.visualizar();
@@ -18,7 +18,7 @@ public class Menu {
 		c1.visualizar();
 
 		// Teste da Classe Conta Corrente
-		ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 1000.0f);
+		ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "Mauro da Silva", 0.0f, 1000.0f);
 		cc1.visualizar();
 		cc1.sacar(12000.0f);
 		cc1.visualizar();
@@ -26,7 +26,7 @@ public class Menu {
 		cc1.visualizar();
 
 		// Teste da Classe Conta Poupança
-		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Lionete Rodrigues", 100000.0f, 15);
 		cp1.visualizar();
 		cp1.sacar(1000.0f);
 		cp1.visualizar();
@@ -39,7 +39,7 @@ public class Menu {
 
 		while (true) {
 
-			System.out.println(Cores.TEXT_BLUE + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
 					+ "*****************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                BANCO DO BRAZIL COM Z                ");
