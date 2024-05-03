@@ -130,9 +130,9 @@ public class Menu {
 
 	public static void sobre() {
 		System.out.println("\n*********************************************************");
-		System.out.println("Projeto Desenvolvido por: ");
-		System.out.println("Generation Brasil - generation@generation.org");
-		System.out.println("github.com/conteudoGeneration");
+		System.out.println("Projeto Desenvolvido por: Ellen Silva");
+		System.out.println("Generation Brasil - ellen.silva@genstudents.org");
+		System.out.println("github.com/ellenmape");
 		System.out.println("*********************************************************");
 	}
 
@@ -140,7 +140,7 @@ public class Menu {
 
 		try {
 
-			System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
+			System.out.println(Cores.TEXT_RESET + "\nPressione Enter para Continuar...");
 			System.in.read();
 
 		} catch (IOException e) {
