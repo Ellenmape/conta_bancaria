@@ -1,5 +1,7 @@
 package conta;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import conta.model.Conta;
 import conta.model.ContaCorrente;
@@ -9,7 +11,7 @@ import conta.util.Cores;
 public class Menu {
 	public static void main(String[] args) {
 
-		//Classe Conta
+		// Classe Conta
 		Conta c1 = new Conta(3, 123, 1, "Bernadete Campos", 500000.0f);
 		c1.visualizar();
 		c1.sacar(12000.0f);
@@ -33,7 +35,7 @@ public class Menu {
 		cp1.depositar(5000.0f);
 		cp1.visualizar();
 
-		Scanner leia = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
 		int opcao;
 
@@ -60,50 +62,67 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
 
-			opcao = leia.nextInt();
+			try {
+				opcao = scanner.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("\nDigite valores inteiros!");
+				scanner.nextLine();
+				opcao = 0;
+			}
+
+			//opcao = scanner.nextInt();
 
 			if (opcao == 9) {
 				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				sobre();
-				leia.close();
+				scanner.close();
 				System.exit(0);
 			}
 
 			switch (opcao) {
 			case 1:
 				System.out.println(Cores.TEXT_WHITE + "Criar Conta\n\n");
-
+				
+				keyPress();
 				break;
 			case 2:
 				System.out.println(Cores.TEXT_WHITE + "Listar todas as Contas\n\n");
-
+				
+				keyPress();
 				break;
 			case 3:
 				System.out.println(Cores.TEXT_WHITE + "Consultar dados da Conta - por número\n\n");
 
+				keyPress();
 				break;
 			case 4:
 				System.out.println(Cores.TEXT_WHITE + "Atualizar dados da Conta\n\n");
-
+				keyPress();
 				break;
 			case 5:
 				System.out.println(Cores.TEXT_WHITE + "Apagar a Conta\n\n");
-
+				
+				keyPress();
 				break;
 			case 6:
 				System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
-
+				
+				keyPress();
 				break;
 			case 7:
 				System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
-
+				
+				keyPress();
 				break;
 			case 8:
 				System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
-
+				
+				keyPress();
 				break;
 			default:
 				System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
+				
+				keyPress();
 				break;
 			}
 		}
@@ -117,4 +136,18 @@ public class Menu {
 		System.out.println("*********************************************************");
 	}
 
+	public static void keyPress() {
+
+		try {
+
+			System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+
+		}
+
+	}
 }
